@@ -16,7 +16,7 @@ export class AuthService {
         private jwtService :JwtService
     ){}
     async signUp(signUpDto:SignUpDto){
-        const {name ,email,password}=signUpDto
+        const {name,email,password}=signUpDto
 
         const existingUser = await this.userModel.findOne({email});
         if (existingUser) {
